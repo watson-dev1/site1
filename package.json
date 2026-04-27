@@ -1,0 +1,33 @@
+{
+  "name": "wa-saas-pro",
+  "version": "1.0.0",
+  "description": "WhatsApp Bot SaaS Platform using Baileys",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "saas",
+    "baileys",
+    "dashboard"
+  ],
+  "author": "Watson-xd",
+  "license": "MIT",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.8",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.0",
+    "pino": "^9.3.2",
+    "socket.io": "^4.7.5",
+    "fs-extra": "^11.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
