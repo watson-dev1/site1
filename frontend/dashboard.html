@@ -1,0 +1,33 @@
+<h1>🚀 WhatsApp SaaS Dashboard</h1>
+
+<input id="num" placeholder="Enter number">
+<button onclick="createBot()">Create Bot</button>
+
+<p id="status"></p>
+<p id="code"></p>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+const socket = io();
+
+function createBot() {
+    fetch("/api/bot/create", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": localStorage.getItem("token")
+        },
+        body: JSON.stringify({
+            number: num.value
+        })
+    });
+}
+
+socket.on("pairing", (data) => {
+    code.innerText = "PAIRING CODE: " + data.code;
+});
+
+socket.on("status", (data) => {
+    status.innerText = data.number + " → " + data.status;
+});
+</script>
